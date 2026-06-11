@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/desktop.nix
     ];
 
   # Bootloader.
@@ -40,53 +41,6 @@
     LC_PAPER = "es_CO.UTF-8";
     LC_TELEPHONE = "es_CO.UTF-8";
     LC_TIME = "es_CO.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  programs.xwayland.enable = true;
-
-  programs.niri.enable = true;
-
-  programs.dms-shell = {
-  enable = true;
-
-  systemd = {
-    enable = true;             # Systemd service for auto-start
-    restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
-  };
-  
-    # Core features
-    enableSystemMonitoring = true;     # System monitoring widgets (dgop)
-    enableVPN = true;                  # VPN management widget
-    enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
-    enableAudioWavelength = true;      # Audio visualizer (cava)
-    enableCalendarEvents = true;       # Calendar integration (khal)
-    enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)
-  };
-
-  services.displayManager.dms-greeter = {
-    enable = true;
-    compositor = {
-      name = "niri"; # Required. Can be also "hyprland" or "sway"
-    };
-
-    # Sync your user's DankMaterialShell theme with the greeter. You'll probably want this
-    configHome = "/home/mmunoz";
-
-    # Custom config files for non-standard config locations
-    configFiles = [
-      "/home/mmunoz/.config/DankMaterialShell/settings.json"
-    ];
-
-    # Save the logs to a file
-    logs = {
-      save = true; 
-      path = "/tmp/dms-greeter.log";
-    };
-
-    # Custom Quickshell Package    
-    quickshell.package = pkgs.quickshell;
   };
 
   # Configure ZSH
@@ -137,40 +91,8 @@
     ];
   };
 
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "latam";
-    variant = "";
-  };
-
   # Configure console keymap
   console.keyMap = "la-latin1";
-
-  # Enable disk mounting
-  services.udisks2.enable = true;
-  services.gvfs.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.ipp-usb.enable = true;
-
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -203,14 +125,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-   ghostty
-   xwayland-satellite
-   corefonts
-   vlc
-  ];
+  environment.systemPackages = [];
 
   programs.ssh.startAgent = true;
   services.gnome.gcr-ssh-agent.enable = false;
