@@ -22,6 +22,18 @@
             install_url = moz "google-translate";
             installation_mode = "normal_installed";
           };
+          "{e369192d-43df-486e-aca0-d771eaed541d}" = {
+            install_url = moz "firefox-hackbar";
+            installation_mode = "force_installed";
+          };
+          "rexxargupta@gmail.com" = {
+            install_url = moz "trufflehog";
+            installation_mode = "force_installed";
+          };
+          "wappalyzer@crunchlabz.com" = {
+            install_url = moz "wappalyzer";
+            installation_mode = "force_installed";
+          };
         };
     };
 
@@ -32,6 +44,8 @@
       extensions = {
         packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           ublock-origin
+          foxyproxy-standard
+          cookie-editor
         ];
         force = true;
         settings = {
