@@ -17,6 +17,15 @@
       onlyoffice-desktopeditors
       nixfmt
       mcp-nixos
+      lavat
+      lazysql
+      cava
+      television
+      sl
+      cowsay
+      hollywood
+      asciiquarium
+      pipes
     ]
     ++ (with pkgs-unstable; [
       vscode
