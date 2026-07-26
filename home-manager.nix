@@ -1,5 +1,6 @@
 {
   inputs,
+  hostConfig,
   pkgs-unstable,
   desktop,
   ...
@@ -8,8 +9,11 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs pkgs-unstable desktop; };
+    extraSpecialArgs = {
+      inherit inputs pkgs-unstable desktop;
+      inherit hostConfig;
+    };
     backupFileExtension = "hm-backup";
-    users.mmunoz = import ./home/mmunoz;
+    users.${hostConfig.username} = import ./home/mmunoz;
   };
 }

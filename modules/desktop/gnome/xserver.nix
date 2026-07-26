@@ -1,8 +1,8 @@
-{ ... }: {
+{ hostConfig, ... }: {
   services.xserver = {
     enable = true;
     xkb = {
-      layout = "latam";
+      layout = hostConfig.xkbLayout;
       variant = "";
     };
   };

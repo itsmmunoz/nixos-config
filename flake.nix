@@ -22,11 +22,15 @@
       home-manager,
       ...
     }@inputs:
+    let
+      hostConfig = import ./config.nix;
+    in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${hostConfig.hostname} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
+          inherit hostConfig;
           desktop = "gnome";
           # Independent nixpkgs import needs its own allowUnfree
           # (system-level nixpkgs.config doesn't apply here)

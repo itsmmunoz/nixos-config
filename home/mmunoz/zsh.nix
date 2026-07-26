@@ -1,4 +1,4 @@
-{ ... }: {
+{ hostConfig, ... }: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -23,15 +23,15 @@
     };
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
-      test = "sudo nixos-rebuild test --flake /etc/nixos#nixos";
-      diff = "nixos-rebuild dry-activate --flake /etc/nixos#nixos";
+      update = "sudo nixos-rebuild switch --flake ${hostConfig.flakePath}#${hostConfig.flakeConfig}";
+      test = "sudo nixos-rebuild test --flake ${hostConfig.flakePath}#${hostConfig.flakeConfig}";
+      diff = "nixos-rebuild dry-activate --flake ${hostConfig.flakePath}#${hostConfig.flakeConfig}";
       nix-gc = "sudo nix-collect-garbage -d";
       nix-history = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-      nix-edit = "code /etc/nixos";
-      nix-update = "nix flake update /etc/nixos && update";
+      nix-edit = "code ${hostConfig.flakePath}";
+      nix-update = "nix flake update ${hostConfig.flakePath} && update";
       search = "nix search nixpkgs";
-      fmt = "nix fmt /etc/nixos";
+      fmt = "nix fmt ${hostConfig.flakePath}";
     };
 
     history = {

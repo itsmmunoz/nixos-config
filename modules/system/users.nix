@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
-  users.users."mmunoz" = {
+{ pkgs, hostConfig, ... }: {
+  users.users.${hostConfig.username} = {
     isNormalUser = true;
-    description = "Maycol Muñoz";
+    description = hostConfig.fullName;
     extraGroups = [
       "networkmanager"
       "wheel"

@@ -1,6 +1,6 @@
-{ desktop, ... }: {
-  home.username = "mmunoz";
-  home.homeDirectory = "/home/mmunoz";
+{ desktop, hostConfig, ... }: {
+  home.username = hostConfig.username;
+  home.homeDirectory = "/home/${hostConfig.username}";
   home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;

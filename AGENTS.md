@@ -12,7 +12,8 @@ Home-manager is integrated as a NixOS module (not standalone). Changes to `home/
 
 | Path | Purpose |
 |------|---------|
-| `flake.nix` | Entry point; pins nixpkgs (26.05) + home-manager (release-26.05) + nixpkgs-unstable |
+| `config.nix` | **Single source of truth**: username, email, hostname, locale, flake paths, feature flags |
+| `flake.nix` | Entry point; imports `config.nix`, pins nixpkgs (26.05) + home-manager (release-26.05) + nixpkgs-unstable |
 | `home-manager.nix` | Home-manager module configuration (useGlobalPkgs, user imports) |
 | `hosts/nixos/default.nix` | Host config; imports `modules/` + hardware.nix |
 | `hosts/nixos/hardware.nix` | Auto-generated, do not edit |
@@ -23,7 +24,9 @@ Home-manager is integrated as a NixOS module (not standalone). Changes to `home/
 
 ## Notable patterns
 
-- **Desktop selection**: `modules/desktop/default.nix` imports the active desktop. To switch desktops, change the import there and in `home/mmunoz/default.nix`.
+- **Centralized config**: `config.nix` holds all user/system values (username, email, hostname, locale, feature flags). All modules consume these via `hostConfig` (passed through `specialArgs`).
+- **Feature flags**: `config.nix` → `features.*` controls which services are imported in `modules/default.nix`. Toggle services per host without touching module files.
+- **Desktop selection**: `modules/desktop/default.nix` imports the active desktop. To switch desktops, change the `desktop` variable in `flake.nix` and add the corresponding file under `home/mmunoz/`.
 - **Desktop structure**: Each desktop has its own dir under `modules/desktop/` with `default.nix` (system) and its home-manager config in `home/mmunoz/{name}.nix`.
 - **Unstable packages**: Defined once in `flake.nix` as `pkgs-unstable` and passed via `specialArgs`. Add new unstable pkgs in `modules/system/packages.nix` by extending the `pkgs-unstable` set.
 - **New modules**: add to `modules/default.nix` imports. New home modules add to `home/mmunoz/default.nix` imports.
