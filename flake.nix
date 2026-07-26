@@ -27,6 +27,7 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
+          desktop = "gnome";
           # Independent nixpkgs import needs its own allowUnfree
           # (system-level nixpkgs.config doesn't apply here)
           pkgs-unstable = import nixpkgs-unstable {

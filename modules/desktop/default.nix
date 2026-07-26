@@ -1,5 +1,5 @@
-{ ... }: {
+{ desktop, ... }: {
   imports = [
-    ./gnome/default.nix
+    (./. + "/${desktop}/default.nix")
   ];
 }
