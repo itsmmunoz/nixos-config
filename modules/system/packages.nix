@@ -16,7 +16,6 @@
       obs-studio
       onlyoffice-desktopeditors
       nixfmt
-      mcp-nixos
       lavat
       lazysql
       cava
