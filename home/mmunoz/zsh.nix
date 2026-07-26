@@ -40,7 +40,7 @@
 
     initContent = ''
       format-nix() {
-        sudo nixfmt $(find /etc/nixos -name '*.nix' -not -path '*/result/*' -not -path '*/.git/*')
+        nixfmt $(find /etc/nixos -name '*.nix' -not -path '*/result/*' -not -path '*/.git/*')
       }
 
       # Arrow key history search (after oh-my-zsh init)

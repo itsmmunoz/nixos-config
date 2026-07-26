@@ -50,17 +50,12 @@
       toggle-menu = [ "<Super>v" ];
     };
 
-    "org/gnome/desktop/wm/keybindings" = {
-      switch-to-workspace-1 = [ "<Super>1" ];
-      switch-to-workspace-2 = [ "<Super>2" ];
-      switch-to-workspace-3 = [ "<Super>3" ];
-      switch-to-workspace-4 = [ "<Super>4" ];
-      switch-to-workspace-5 = [ "<Super>5" ];
-      switch-to-workspace-6 = [ "<Super>6" ];
-      switch-to-workspace-7 = [ "<Super>7" ];
-      switch-to-workspace-8 = [ "<Super>8" ];
-      switch-to-workspace-9 = [ "<Super>9" ];
-    };
+    "org/gnome/desktop/wm/keybindings" = builtins.listToAttrs (
+      map (i: {
+        name = "switch-to-workspace-${toString (i + 1)}";
+        value = [ "<Super>${toString (i + 1)}" ];
+      }) (builtins.genList (i: i) 9)
+    );
 
     "org/gnome/shell/keybindings" = {
       toggle-message-tray = [ ];

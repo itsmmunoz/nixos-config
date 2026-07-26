@@ -8,7 +8,6 @@
   imports = [
     (./. + "/${desktop}.nix")
     ./gtk.nix
-    ./packages.nix
     ./zsh.nix
     ./cli.nix
     ./git.nix

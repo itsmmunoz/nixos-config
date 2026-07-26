@@ -1,4 +1,6 @@
-{
+{ pkgs, ... }: {
+  home.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
