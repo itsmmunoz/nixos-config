@@ -1,4 +1,10 @@
-{ inputs, pkgs-unstable, desktop, ... }: {
+{
+  inputs,
+  pkgs-unstable,
+  desktop,
+  ...
+}:
+{
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

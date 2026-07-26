@@ -23,7 +23,7 @@
       copy-on-select = "clipboard";
       clipboard-paste-protection = false;
 
-      scrollback-limit = 10000;
+      scrollback-limit = 50000;
       confirm-close-surface = false;
       quit-after-last-window-closed = true;
 
