@@ -1,6 +1,19 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     mcp-nixos
+    tree
+    wget
+    fastfetch
+    lazygit
+    lazysql
+    television
+    cava
+    sl
+    cowsay
+    hollywood
+    asciiquarium
+    pipes
+    nixfmt
   ];
 
   programs.bat = {

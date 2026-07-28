@@ -12,6 +12,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lazyvim-nix.url = "github:pfassina/lazyvim-nix";
   };
 
   outputs =
@@ -20,6 +21,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      lazyvim-nix,
       ...
     }@inputs:
     let
@@ -32,6 +34,7 @@
           inherit inputs;
           inherit hostConfig;
           desktop = "gnome";
+          inherit lazyvim-nix;
           # Independent nixpkgs import needs its own allowUnfree
           # (system-level nixpkgs.config doesn't apply here)
           pkgs-unstable = import nixpkgs-unstable {

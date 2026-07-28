@@ -14,5 +14,7 @@
     ./firefox.nix
     ./ghostty.nix
     ./opencode.nix
+    ./neovim.nix
+    ./apps.nix
   ];
 }
