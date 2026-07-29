@@ -17,6 +17,7 @@
     ./opencode.nix
     ./neovim.nix
     ./apps.nix
+    ./webapps.nix
     ./fonts.nix
   ];
 }
