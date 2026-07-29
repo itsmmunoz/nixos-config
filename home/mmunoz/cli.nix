@@ -3,9 +3,6 @@
     mcp-nixos
     tree
     wget
-    fastfetch
-    lazygit
-    lazysql
     television
     cava
     sl

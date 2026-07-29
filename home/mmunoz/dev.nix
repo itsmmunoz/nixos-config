@@ -23,5 +23,7 @@ in
     fnm
     yarn
     pnpm
+    lazygit
+    lazysql
   ];
 }

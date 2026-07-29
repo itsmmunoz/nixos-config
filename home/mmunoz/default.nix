@@ -9,6 +9,7 @@
     (./. + "/${desktop}.nix")
     ./gtk.nix
     ./zsh.nix
+    ./fastfetch.nix
     ./cli.nix
     ./dev.nix
     ./git.nix
