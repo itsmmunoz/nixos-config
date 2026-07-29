@@ -10,6 +10,7 @@
     ./gtk.nix
     ./zsh.nix
     ./cli.nix
+    ./dev.nix
     ./git.nix
     ./firefox.nix
     ./ghostty.nix

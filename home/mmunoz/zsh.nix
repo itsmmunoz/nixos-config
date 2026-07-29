@@ -14,6 +14,8 @@
         "docker"
         "npm"
         "node"
+        "fnm"
+        "composer"
         "extract"
         "z"
         "copypath"
@@ -44,6 +46,9 @@
     initContent = ''
       setopt APPEND_HISTORY
       setopt SHARE_HISTORY
+
+      # fnm (Fast Node Manager) — auto-switch Node version
+      eval "$(fnm env --use-on-cd)"
 
       # Arrow key history search (after oh-my-zsh init)
       bindkey '^[[A' history-search-backward
