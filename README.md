@@ -5,14 +5,17 @@ NixOS flake configuration for host `nixos` (x86_64-linux).
 ## Structure
 
 ```
+├── config.nix                — single source of truth (user, host, features, flags)
 ├── flake.nix
 ├── home-manager.nix          — home-manager module config
 ├── hosts/nixos/              — host-specific (default.nix, hardware.nix)
-├── home/mmunoz/              — home-manager (zsh, git, gtk, ghostty, firefox, cli tools)
+├── home/mmunoz/              — home-manager (zsh, git, gtk, ghostty, firefox, cli,
+│                               neovim, opencode, fastfetch, dev, webapps, fonts, gnome)
 └── modules/
+    ├── default.nix           — central importer (uses feature flags)
     ├── desktop/
     │   └── gnome/            — gnome (default.nix, packages.nix, xserver.nix)
-    ├── services/             — pipewire, flatpak, docker, libvirtd, printing, fwupd, localsend
+    ├── services/             — pipewire, flatpak, virtualisation, printing, fwupd, localsend
     └── system/               — locale, nix-settings, packages, users, boot
 ```
 
@@ -33,9 +36,27 @@ cleanup
 
 | Source | Packages |
 |--------|----------|
-| stable | tree, wget, fastfetch, corefonts, lazygit, obsidian, obs-studio, onlyoffice, nixfmt |
-| unstable | vscode, opencode, brave |
-| home-manager | bat, btop, yazi, nerd-fonts.jetbrains-mono, firefox (module), ghostty (module) |
+| system (stable) | lavat |
+| home (stable) | tree, wget, fastfetch, corefonts, lazygit, lazysql, obsidian, obs-studio, onlyoffice, nixfmt, television, cava, sl, cowsay, hollywood, asciiquarium, pipes, composer, fnm, nodejs_24, pnpm, yarn, gnome-boxes, gnome-tweaks, mcp-nixos |
+| home (unstable) | vscode, brave, opencode, antigravity-cli |
+| hm modules | bat, btop, yazi, firefox, ghostty, neovim/lazyvim, git |
+
+## Development
+
+- **Neovim:** LazyVim with extras for PHP, TypeScript, Nix, prettier, eslint
+- **PHP:** composer
+- **Node.js:** fnm, nodejs_24, pnpm, yarn
+- **Tools:** lazygit, lazysql
+
+## GNOME configuration
+
+- **Extensions:** user-themes, blur-my-shell, clipboard-indicator, caffeine, tiling-shell
+- **Keybindings:** Super+E (files), Super+T (terminal), Super+V (clipboard), Super+1-9 (workspaces)
+
+## Web apps
+
+Desktop entries via `brave --app`:
+- WhatsApp, ChatGPT, Clipchamp
 
 ## Services
 
@@ -43,7 +64,7 @@ cleanup
 - PipeWire (audio, ALSA + PulseAudio compat)
 - CUPS (printing, IPP-USB)
 - Flatpak
-- Docker, libvirtd (+ Spice USB redirection)
+- Virtualisation (Docker + libvirtd + Spice USB)
 - fwupd
 - LocalSend
 
