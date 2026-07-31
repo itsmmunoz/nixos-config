@@ -10,7 +10,7 @@ NixOS flake configuration for host `nixos` (x86_64-linux).
 ├── home-manager.nix          — home-manager module config
 ├── hosts/nixos/              — host-specific (default.nix, hardware.nix)
 ├── home/mmunoz/              — home-manager (zsh, git, gtk, ghostty, firefox, cli,
-│                               neovim, opencode, fastfetch, dev, webapps, fonts, gnome)
+│                               opencode, fastfetch, dev, webapps, fonts, gnome)
 └── modules/
     ├── default.nix           — central importer (uses feature flags)
     ├── desktop/
@@ -39,11 +39,10 @@ cleanup
 | system (stable) | lavat |
 | home (stable) | tree, wget, fastfetch, corefonts, lazygit, lazysql, obsidian, obs-studio, onlyoffice, nixfmt, television, cava, sl, cowsay, hollywood, asciiquarium, pipes, composer, fnm, nodejs_24, pnpm, yarn, gnome-boxes, gnome-tweaks, mcp-nixos |
 | home (unstable) | vscode, brave, opencode, antigravity-cli |
-| hm modules | bat, btop, yazi, firefox, ghostty, neovim/lazyvim, git |
+| hm modules | bat, btop, yazi, firefox, ghostty, git |
 
 ## Development
 
-- **Neovim:** LazyVim with extras for PHP, TypeScript, Nix, prettier, eslint
 - **PHP:** composer
 - **Node.js:** fnm, nodejs_24, pnpm, yarn
 - **Tools:** lazygit, lazysql
