@@ -7,7 +7,6 @@
     installVimSyntax = true;
 
     settings = {
-      theme = "Catppuccin Mocha";
       font-family = "JetBrainsMono Nerd Font";
       font-size = 13;
 

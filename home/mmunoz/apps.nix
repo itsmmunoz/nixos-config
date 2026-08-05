@@ -14,6 +14,5 @@
     ++ (with pkgs-unstable; [
       vscode
       brave
-      antigravity-cli
     ]);
 }

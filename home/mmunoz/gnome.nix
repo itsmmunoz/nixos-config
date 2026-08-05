@@ -17,6 +17,7 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
       monospace-font-name = "JetBrainsMono Nerd Font 12";
     };
 

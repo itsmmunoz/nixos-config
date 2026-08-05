@@ -9,8 +9,10 @@
   hostname = "nixos";
   timezone = "America/Bogota";
   locale = "es_CO.UTF-8";
+  defaultLocale = "en_US.UTF-8";
   consoleKeyMap = "la-latin1";
   xkbLayout = "latam";
+  desktop = "gnome";
 
   # Flake path (used in zsh aliases)
   flakePath = "/etc/nixos";

@@ -1,7 +1,7 @@
 { hostConfig, ... }: {
   time.timeZone = hostConfig.timezone;
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = hostConfig.defaultLocale;
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = hostConfig.locale;

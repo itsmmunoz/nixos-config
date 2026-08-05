@@ -1,27 +1,30 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    mcp-nixos
-    tree
-    wget
-    television
-    cava
-    sl
-    cowsay
-    hollywood
-    asciiquarium
-    pipes
-    nixfmt
-  ];
+{ pkgs, pkgs-unstable, ... }: {
+  home.packages =
+    with pkgs;
+    [
+      mcp-nixos
+      tree
+      wget
+      television
+      cava
+      sl
+      cowsay
+      hollywood
+      asciiquarium
+      pipes
+      nixfmt
+    ]
+    ++ (with pkgs-unstable; [
+      antigravity-cli
+    ]);
 
   programs.bat = {
     enable = true;
-    config.theme = "Catppuccin Mocha";
   };
 
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "catppuccin_mocha";
       update_interval = 0; # Only updates on focus/resize to save CPU
       vim_keys = true;
     };

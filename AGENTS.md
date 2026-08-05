@@ -12,7 +12,7 @@ Home-manager is integrated as a NixOS module (not standalone). Changes to `home/
 
 | Path | Purpose |
 |------|---------|
-| `config.nix` | **Single source of truth**: username, email, hostname, locale, flake paths, feature flags |
+| `config.nix` | **Single source of truth**: username, email, hostname, locale, desktop, flake paths, feature flags |
 | `flake.nix` | Entry point; imports `config.nix`, pins nixpkgs (26.05) + home-manager (release-26.05) + nixpkgs-unstable |
 | `home-manager.nix` | Home-manager module configuration (useGlobalPkgs, user imports) |
 | `hosts/nixos/default.nix` | Host config; imports `modules/` + hardware.nix |
@@ -24,13 +24,14 @@ Home-manager is integrated as a NixOS module (not standalone). Changes to `home/
 
 ## Notable patterns
 
-- **Centralized config**: `config.nix` holds all user/system values (username, email, hostname, locale, feature flags). All modules consume these via `hostConfig` (passed through `specialArgs`).
+- **Centralized config**: `config.nix` holds all user/system values (username, email, hostname, locale, desktop, feature flags). All modules consume these via `hostConfig` (passed through `specialArgs`).
 - **Feature flags**: `config.nix` → `features.*` controls which services are imported in `modules/default.nix`. Toggle services per host without touching module files.
-- **Desktop selection**: `modules/desktop/default.nix` imports the active desktop. To switch desktops, change the `desktop` variable in `flake.nix` and add the corresponding file under `home/mmunoz/`.
+- **Desktop selection**: `modules/desktop/default.nix` imports the active desktop. To switch desktops, change the `desktop` value in `config.nix` and add the corresponding file under `home/mmunoz/`.
 - **Desktop structure**: Each desktop has its own dir under `modules/desktop/` with `default.nix` (system) and its home-manager config in `home/mmunoz/{name}.nix`.
 - **Unstable packages**: Defined once in `flake.nix` as `pkgs-unstable` and passed via `specialArgs`. Add new unstable pkgs in `modules/system/packages.nix` by extending the `pkgs-unstable` set.
 - **New modules**: add to `modules/default.nix` imports. New home modules add to `home/mmunoz/default.nix` imports.
-- **Home-manager CLI tools**: User CLI tools with Home Manager modules (bat, btop, yazi, editorconfig, direnv) are in `home/mmunoz/cli.nix`.
+- **Home-manager CLI tools**: User CLI tools with Home Manager modules (bat, btop, yazi, editorconfig, direnv) plus standalone CLI pkgs and terminal toys are in `home/mmunoz/cli.nix`. GUI apps live in `home/mmunoz/apps.nix`, dev tooling in `home/mmunoz/dev.nix`.
+- **Theme**: GTK/icon/cursor theme is set once in `home/mmunoz/gtk.nix`; `gnome.nix` dconf only sets desktop-specific keys.
 
 ## Commands
 

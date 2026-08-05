@@ -24,18 +24,19 @@
     }@inputs:
     let
       hostConfig = import ./config.nix;
+      system = "x86_64-linux";
     in
     {
       nixosConfigurations.${hostConfig.hostname} = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {
           inherit inputs;
           inherit hostConfig;
-          desktop = "kde";
+          desktop = hostConfig.desktop;
           # Independent nixpkgs import needs its own allowUnfree
           # (system-level nixpkgs.config doesn't apply here)
           pkgs-unstable = import nixpkgs-unstable {
-            system = "x86_64-linux";
+            inherit system;
             config.allowUnfree = true;
           };
         };
@@ -46,6 +47,6 @@
         ];
       };
 
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+      formatter.x86_64-linux = nixpkgs.legacyPackages.${system}.nixfmt-tree;
     };
 }
