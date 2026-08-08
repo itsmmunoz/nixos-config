@@ -8,7 +8,6 @@
     enable = true;
     extensions = [
       { package = pkgs.gnomeExtensions.user-themes; }
-      { package = pkgs.gnomeExtensions.blur-my-shell; }
       { package = pkgs.gnomeExtensions.clipboard-indicator; }
       { package = pkgs.gnomeExtensions.caffeine; }
       { package = pkgs.gnomeExtensions.tiling-shell; }

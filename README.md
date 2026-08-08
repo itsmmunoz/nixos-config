@@ -49,7 +49,7 @@ cleanup
 
 ## GNOME configuration
 
-- **Extensions:** user-themes, blur-my-shell, clipboard-indicator, caffeine, tiling-shell
+- **Extensions:** user-themes, clipboard-indicator, caffeine, tiling-shell
 - **Keybindings:** Super+E (files), Super+T (terminal), Super+V (clipboard), Super+1-9 (workspaces)
 
 ## Web apps
