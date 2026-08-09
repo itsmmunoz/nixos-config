@@ -45,9 +45,6 @@
     };
 
     initContent = ''
-      setopt APPEND_HISTORY
-      setopt SHARE_HISTORY
-
       # fnm (Fast Node Manager) — auto-switch Node version
       eval "$(fnm env --use-on-cd)"
 
