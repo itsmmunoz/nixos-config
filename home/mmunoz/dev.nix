@@ -10,6 +10,7 @@
     pnpm
     yarn
 
+    lazydocker
     lazygit
     lazysql
   ];
