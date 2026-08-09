@@ -7,7 +7,6 @@
       wget
       television
       cava
-      sl
       cowsay
       hollywood
       asciiquarium
