@@ -6,7 +6,6 @@
     ./system/locale.nix
     ./system/users.nix
     ./system/nix-settings.nix
-    ./system/packages.nix
   ]
   ++ lib.optionals hostConfig.features.virtualisation [ ./services/virtualisation.nix ]
   ++ lib.optionals hostConfig.features.printing [ ./services/printing.nix ]

@@ -36,8 +36,7 @@ cleanup
 
 | Source | Packages |
 |--------|----------|
-| system (stable) | lavat |
-| home (stable) | tree, wget, fastfetch, corefonts, lazygit, lazysql, obsidian, obs-studio, onlyoffice, nixfmt, television, cava, sl, cowsay, hollywood, asciiquarium, pipes, composer, fnm, nodejs_24, pnpm, yarn, gnome-boxes, gnome-tweaks, mcp-nixos |
+| home (stable) | tree, wget, fastfetch, corefonts, lazygit, lazysql, obsidian, obs-studio, onlyoffice, nixfmt, lavat, television, cava, cowsay, hollywood, asciiquarium, pipes, composer, fnm, nodejs_24, pnpm, yarn, gnome-boxes, gnome-tweaks, mcp-nixos |
 | home (unstable) | vscode, brave, opencode, antigravity-cli |
 | hm modules | bat, btop, yazi, firefox, ghostty, git |
 

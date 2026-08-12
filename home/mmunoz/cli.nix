@@ -12,6 +12,7 @@
       asciiquarium
       pipes
       nixfmt
+      lavat
     ]
     ++ (with pkgs-unstable; [
       antigravity-cli
