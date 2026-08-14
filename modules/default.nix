@@ -2,6 +2,7 @@
   imports = [
     ./desktop/default.nix
     ./services/pipewire.nix
+    ./system/appimage.nix
     ./system/boot.nix
     ./system/locale.nix
     ./system/users.nix
