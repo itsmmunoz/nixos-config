@@ -31,7 +31,7 @@
       nix-gc = "sudo nix-collect-garbage -d";
       nix-history = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       nix-edit = "code ${hostConfig.flakePath}";
-      nix-update = "nix flake update ${hostConfig.flakePath} && update";
+      nix-update = "nix flake update && update";
       sail = "[ -f sail ] && sh sail || sh vendor/bin/sail";
       search = "nix search nixpkgs";
       fmt = "nix fmt ${hostConfig.flakePath}";
