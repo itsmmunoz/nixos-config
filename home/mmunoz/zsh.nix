@@ -14,7 +14,6 @@
         "docker"
         "npm"
         "node"
-        "fnm"
         "composer"
         "extract"
         "z"
@@ -45,9 +44,6 @@
     };
 
     initContent = ''
-      # fnm (Fast Node Manager) — auto-switch Node version
-      eval "$(fnm env --use-on-cd)"
-
       # Arrow key history search (after oh-my-zsh init)
       bindkey '^[[A' history-search-backward
       bindkey '^[[B' history-search-forward
