@@ -1,10 +1,18 @@
-{ pkgs, hostConfig, ... }: {
+{
+  pkgs,
+  lib,
+  hostConfig,
+  ...
+}:
+{
   users.users.${hostConfig.username} = {
     isNormalUser = true;
     description = hostConfig.fullName;
     extraGroups = [
       "networkmanager"
       "wheel"
+    ]
+    ++ lib.optionals hostConfig.features.virtualisation [
       "docker"
       "libvirtd"
     ];

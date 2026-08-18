@@ -20,7 +20,7 @@ Home-manager is integrated as a NixOS module (not standalone). Changes to `home/
 | `home/mmunoz/` | Home-manager: zsh, git, gnome (dconf + gtk), cli tools (bat, btop, yazi, editorconfig, direnv), firefox, ghostty, opencode |
 | `modules/desktop/` | Desktop selection (`default.nix`) + per-desktop dirs (`gnome/`) with system configs |
 | `modules/services/` | pipewire, printing, flatpak, fwupd, virtualisation (docker, libvirtd), localsend |
-| `modules/system/` | boot, locale, nix-settings, packages (stable + unstable), users |
+| `modules/system/` | boot, locale, nix-settings, users; system packages live in `home/mmunoz/` |
 
 ## Notable patterns
 
@@ -28,7 +28,7 @@ Home-manager is integrated as a NixOS module (not standalone). Changes to `home/
 - **Feature flags**: `config.nix` → `features.*` controls which services are imported in `modules/default.nix`. Toggle services per host without touching module files.
 - **Desktop selection**: `modules/desktop/default.nix` imports the active desktop. To switch desktops, change the `desktop` value in `config.nix` and add the corresponding file under `home/mmunoz/`.
 - **Desktop structure**: Each desktop has its own dir under `modules/desktop/` with `default.nix` (system) and its home-manager config in `home/mmunoz/{name}.nix`.
-- **Unstable packages**: Defined once in `flake.nix` as `pkgs-unstable` and passed via `specialArgs`. Add new unstable pkgs in `modules/system/packages.nix` by extending the `pkgs-unstable` set.
+- **Unstable packages**: Defined once in `flake.nix` as `pkgs-unstable` and passed via `specialArgs`. Use it in any `home/mmunoz/*.nix` `home.packages` block (e.g. `with pkgs-unstable; [ foo ]`).
 - **New modules**: add to `modules/default.nix` imports. New home modules add to `home/mmunoz/default.nix` imports.
 - **Home-manager CLI tools**: User CLI tools with Home Manager modules (bat, btop, yazi, editorconfig, direnv) plus standalone CLI pkgs and terminal toys are in `home/mmunoz/cli.nix`. GUI apps live in `home/mmunoz/apps.nix`, dev tooling in `home/mmunoz/dev.nix`.
 - **Theme**: GTK/icon/cursor theme is set once in `home/mmunoz/gtk.nix`; `gnome.nix` dconf only sets desktop-specific keys.

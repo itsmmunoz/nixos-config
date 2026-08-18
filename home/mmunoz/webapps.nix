@@ -1,6 +1,7 @@
 { pkgs, pkgs-unstable, ... }:
 
 let
+  brave = "${pkgs-unstable.brave}/bin/brave";
   icons = {
     whatsapp = builtins.fetchurl {
       url = "https://cdn.simpleicons.org/whatsapp";
@@ -23,7 +24,7 @@ in
   xdg.desktopEntries = {
     whatsapp = {
       name = "WhatsApp";
-      exec = "${pkgs-unstable.brave}/bin/brave --app=https://web.whatsapp.com";
+      exec = "${brave} --app=https://web.whatsapp.com";
       icon = icons.whatsapp;
       categories = [
         "Network"
@@ -33,14 +34,14 @@ in
     };
     chatgpt = {
       name = "ChatGPT";
-      exec = "${pkgs-unstable.brave}/bin/brave --app=https://chatgpt.com";
+      exec = "${brave} --app=https://chatgpt.com";
       icon = icons.chatgpt;
       categories = [ "Network" ];
       terminal = false;
     };
     clipchamp = {
       name = "Clipchamp";
-      exec = "${pkgs-unstable.brave}/bin/brave --app=https://clipchamp.com";
+      exec = "${brave} --app=https://clipchamp.com";
       icon = icons.clipchamp;
       categories = [ "AudioVideo" ];
       terminal = false;

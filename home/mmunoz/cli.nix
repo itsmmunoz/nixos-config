@@ -6,13 +6,7 @@
       tree
       wget
       television
-      cava
-      cowsay
-      hollywood
-      asciiquarium
-      pipes
       nixfmt
-      lavat
     ]
     ++ (with pkgs-unstable; [
       antigravity-cli
