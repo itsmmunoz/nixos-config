@@ -7,6 +7,7 @@
       wget
       television
       nixfmt
+      distrobox
     ]
     ++ (with pkgs-unstable; [
       antigravity-cli
