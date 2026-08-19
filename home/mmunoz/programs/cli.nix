@@ -2,7 +2,6 @@
   home.packages =
     with pkgs;
     [
-      mcp-nixos
       tree
       wget
       television
@@ -10,7 +9,10 @@
       distrobox
     ]
     ++ (with pkgs-unstable; [
+      mcp-nixos
       antigravity-cli
+      officecli
+      codegraph
     ]);
 
   programs.bat = {
