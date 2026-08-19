@@ -6,18 +6,18 @@
   programs.home-manager.enable = true;
 
   imports = [
-    (./. + "/${desktop}.nix")
-    ./gtk.nix
-    ./zsh.nix
-    ./fastfetch.nix
-    ./cli.nix
-    ./dev.nix
-    ./git.nix
-    ./firefox.nix
-    ./ghostty.nix
-    ./opencode.nix
-    ./apps.nix
-    ./webapps.nix
-    ./fonts.nix
+    (./desktop + "/${desktop}.nix")
+    ./desktop/gtk.nix
+    ./desktop/fonts.nix
+    ./programs/zsh.nix
+    ./programs/fastfetch.nix
+    ./programs/cli.nix
+    ./programs/dev.nix
+    ./programs/git.nix
+    ./programs/firefox.nix
+    ./programs/ghostty.nix
+    ./programs/opencode.nix
+    ./apps/apps.nix
+    ./apps/webapps.nix
   ];
 }

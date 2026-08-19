@@ -9,8 +9,10 @@ NixOS flake configuration for host `nixos` (x86_64-linux).
 ├── flake.nix
 ├── home-manager.nix          — home-manager module config
 ├── hosts/nixos/              — host-specific (default.nix, hardware.nix)
-├── home/mmunoz/              — home-manager (zsh, git, gtk, ghostty, firefox, cli,
-│                               opencode, fastfetch, dev, webapps, fonts, gnome)
+├── home/mmunoz/              — home-manager
+│   ├── programs/             — zsh, git, firefox, ghostty, opencode, fastfetch, cli, dev
+│   ├── desktop/              — gnome, gtk, fonts, cosmic
+│   └── apps/                 — gui apps, webapps
 └── modules/
     ├── default.nix           — central importer (uses feature flags)
     ├── desktop/
@@ -54,7 +56,7 @@ cleanup
 ## Web apps
 
 Desktop entries via `brave --app`:
-- WhatsApp, ChatGPT, Clipchamp
+- Clipchamp
 
 ## Services
 
