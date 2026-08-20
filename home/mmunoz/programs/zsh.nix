@@ -29,7 +29,7 @@
       diff = "nixos-rebuild dry-activate --flake ${hostConfig.flakePath}#${hostConfig.flakeConfig}";
       nix-gc = "sudo nix-collect-garbage -d";
       nix-history = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-      nix-edit = "code ${hostConfig.flakePath}";
+      nix-edit = "codium ${hostConfig.flakePath}";
       nix-update = "nix flake update && update";
       sail = "[ -f sail ] && sh sail || sh vendor/bin/sail";
       search = "nix search nixpkgs";

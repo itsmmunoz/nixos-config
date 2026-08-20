@@ -12,7 +12,6 @@
       onlyoffice-desktopeditors
     ]
     ++ (with pkgs-unstable; [
-      vscode
       brave
     ]);
 }

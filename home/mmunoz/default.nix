@@ -17,6 +17,7 @@
     ./programs/firefox.nix
     ./programs/ghostty.nix
     ./programs/opencode.nix
+    ./programs/vscodium.nix
     ./apps/apps.nix
     ./apps/webapps.nix
   ];
