@@ -18,6 +18,7 @@
     ./programs/ghostty.nix
     ./programs/opencode.nix
     ./programs/vscodium.nix
+    ./programs/neovim.nix
     ./apps/apps.nix
     ./apps/webapps.nix
   ];

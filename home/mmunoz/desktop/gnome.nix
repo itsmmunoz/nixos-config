@@ -50,7 +50,10 @@
       toggle-menu = [ "<Super>v" ];
     };
 
-    "org/gnome/desktop/wm/keybindings" = builtins.listToAttrs (
+    "org/gnome/desktop/wm/keybindings" = {
+      close = [ "<Super>q" ];
+    }
+    // builtins.listToAttrs (
       map (i: {
         name = "switch-to-workspace-${toString (i + 1)}";
         value = [ "<Super>${toString (i + 1)}" ];
