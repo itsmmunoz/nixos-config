@@ -11,6 +11,5 @@
   ++ lib.optionals hostConfig.features.virtualisation [ ./services/virtualisation.nix ]
   ++ lib.optionals hostConfig.features.printing [ ./services/printing.nix ]
   ++ lib.optionals hostConfig.features.flatpak [ ./services/flatpak.nix ]
-  ++ lib.optionals hostConfig.features.fwupd [ ./services/fwupd.nix ]
-  ++ lib.optionals hostConfig.features.localsend [ ./services/localsend.nix ];
+  ++ lib.optionals hostConfig.features.fwupd [ ./services/fwupd.nix ];
 }
