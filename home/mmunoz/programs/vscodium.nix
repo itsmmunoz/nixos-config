@@ -10,6 +10,8 @@
 
     profiles.default = {
       userSettings = {
+        "workbench.colorTheme" = "Ayu Mirage";
+        "workbench.iconTheme" = "material-icon-theme";
         "editor.minimap.enabled" = false;
         "files.autoSave" = "afterDelay";
         "window.titleBarStyle" = "custom";
