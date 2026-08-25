@@ -10,13 +10,13 @@
     ./desktop/gtk.nix
     ./desktop/fonts.nix
     ./programs/zsh.nix
-    ./programs/fastfetch.nix
+    ./programs/fastfetch
     ./programs/cli.nix
     ./programs/dev.nix
     ./programs/git.nix
     ./programs/firefox.nix
     ./programs/ghostty.nix
-    ./programs/opencode.nix
+    ./programs/opencode
     ./programs/vscodium.nix
     ./programs/neovim.nix
     ./apps/apps.nix
