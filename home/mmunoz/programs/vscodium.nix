@@ -10,11 +10,60 @@
 
     profiles.default = {
       userSettings = {
+        # Theme & UI
         "workbench.colorTheme" = "Ayu Mirage";
         "workbench.iconTheme" = "material-icon-theme";
-        "editor.minimap.enabled" = false;
-        "files.autoSave" = "afterDelay";
+        "workbench.startupEditor" = "none";
         "window.titleBarStyle" = "custom";
+        "update.mode" = "none";
+
+        # Editor
+        "editor.fontSize" = 14;
+        "editor.fontFamily" = "monospace";
+        "editor.tabSize" = 2;
+        "editor.minimap.enabled" = false;
+        "editor.formatOnSave" = true;
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.bracketPairColorization.enabled" = true;
+        "editor.suggestSelection" = "first";
+        "editor.codeActionsOnSave" = {
+          "source.fixAll.eslint" = "explicit";
+        };
+
+        # Prettier
+        "prettier.singleQuote" = true;
+        "prettier.semicolon" = false;
+
+        # ESLint
+        "eslint.validate" = [
+          "javascript"
+          "typescript"
+          "vue"
+        ];
+
+        # PHP
+        "php.validate.executablePath" = "${pkgs.php}/bin/php";
+        "intelephense.environment.phpVersion" = "8.4";
+
+        # Vue
+        "volar.enable" = true;
+        "[vue]" = {
+          "editor.defaultFormatter" = "Vue.volar";
+        };
+
+        # Files
+        "files.autoSave" = "afterDelay";
+        "files.exclude" = {
+          "**/.git" = true;
+          "**/node_modules" = true;
+          "**/__pycache__" = true;
+          "vendor/" = true;
+          "storage/" = true;
+          "bootstrap/cache" = true;
+        };
+
+        # Terminal
+        "terminal.integrated.defaultProfile.linux" = "zsh";
       };
 
       extensions =
