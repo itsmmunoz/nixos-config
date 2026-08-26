@@ -17,7 +17,17 @@
     plugins = with pkgs.vimPlugins; [
       telescope-nvim
       plenary-nvim
-      nvim-treesitter
+      (nvim-treesitter.withPlugins (p: [
+        p.lua
+        p.nix
+        p.javascript
+        p.typescript
+        p.vue
+        p.php
+        p.html
+        p.css
+        p.json
+      ]))
       nvim-cmp
       cmp-nvim-lsp
       cmp-buffer
@@ -25,6 +35,9 @@
       conform-nvim
       lualine-nvim
       nvim-web-devicons
+      gitsigns-nvim
+      nvim-autopairs
+      which-key-nvim
     ];
 
     initLua = ''
@@ -137,6 +150,21 @@
           vim.highlight.on_yank()
         end,
       })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter_start", { clear = true }),
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
+
+      require("gitsigns").setup()
+
+      require("nvim-autopairs").setup()
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+      require("which-key").setup()
     '';
   };
 }
