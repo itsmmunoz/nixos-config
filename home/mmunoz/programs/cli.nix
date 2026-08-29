@@ -7,6 +7,7 @@
       television
       nixfmt
       distrobox
+      zoxide
     ]
     ++ (with pkgs-unstable; [
       mcp-nixos
