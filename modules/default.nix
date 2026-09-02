@@ -6,6 +6,7 @@
     ./system/boot.nix
     ./system/locale.nix
     ./system/users.nix
+    ./system/swap.nix
     ./system/nix-settings.nix
   ]
   ++ lib.optionals hostConfig.features.virtualisation [ ./services/virtualisation.nix ]
