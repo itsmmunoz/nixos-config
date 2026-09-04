@@ -12,7 +12,7 @@ NixOS flake configuration for host `nixos` (x86_64-linux).
 ├── home/mmunoz/              — home-manager
 │   ├── programs/             — zsh, git, firefox, ghostty, opencode, fastfetch, cli, dev
 │   ├── desktop/              — gnome, gtk, fonts, cosmic
-│   └── apps/                 — gui apps, webapps
+│   └── apps/                 — gui apps
 └── modules/
     ├── default.nix           — central importer (uses feature flags)
     ├── desktop/
@@ -52,11 +52,6 @@ cleanup
 
 - **Extensions:** user-themes, clipboard-indicator, caffeine, tiling-shell
 - **Keybindings:** Super+E (files), Super+T (terminal), Super+V (clipboard), Super+1-9 (workspaces)
-
-## Web apps
-
-Desktop entries via `brave --app`:
-- Clipchamp
 
 ## Services
 

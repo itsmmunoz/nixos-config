@@ -20,6 +20,5 @@
     ./programs/vscodium.nix
     ./programs/neovim.nix
     ./apps/apps.nix
-    ./apps/webapps.nix
   ];
 }
