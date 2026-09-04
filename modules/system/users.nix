@@ -11,6 +11,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "ydotool"
     ]
     ++ lib.optionals hostConfig.features.virtualisation [
       "docker"

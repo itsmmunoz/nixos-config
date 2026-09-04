@@ -13,5 +13,6 @@
     ]
     ++ (with pkgs-unstable; [
       brave
+      handy
     ]);
 }

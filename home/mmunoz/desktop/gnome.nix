@@ -25,6 +25,7 @@
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
       ];
     };
 
@@ -44,6 +45,12 @@
       binding = "<Super>period";
       command = "gnome-characters";
       name = "Open Characters";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      binding = "<Super><Alt>space";
+      command = "handy --toggle-transcription";
+      name = "Toggle Handy Dictation";
     };
 
     "org/gnome/shell/extensions/clipboard-indicator" = {
