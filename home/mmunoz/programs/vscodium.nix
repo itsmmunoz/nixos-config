@@ -14,6 +14,7 @@
         "workbench.colorTheme" = "Ayu Mirage";
         "workbench.iconTheme" = "material-icon-theme";
         "workbench.startupEditor" = "none";
+        "workbench.activityBar.location" = "top";
         "window.titleBarStyle" = "custom";
         "update.mode" = "none";
 
@@ -23,8 +24,6 @@
         "editor.tabSize" = 2;
         "editor.minimap.enabled" = false;
         "editor.formatOnSave" = true;
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        "editor.bracketPairColorization.enabled" = true;
         "editor.suggestSelection" = "first";
         "editor.codeActionsOnSave" = {
           "source.fixAll.eslint" = "explicit";
@@ -33,6 +32,26 @@
         # Prettier
         "prettier.singleQuote" = true;
         "prettier.semicolon" = false;
+
+        # Per-language Prettier formatting
+        "[javascript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[typescript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[vue]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[json]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[css]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[html]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
 
         # ESLint
         "eslint.validate" = [
@@ -45,25 +64,14 @@
         "php.validate.executablePath" = "${pkgs.php}/bin/php";
         "intelephense.environment.phpVersion" = "8.4";
 
-        # Vue
-        "volar.enable" = true;
-        "[vue]" = {
-          "editor.defaultFormatter" = "Vue.volar";
-        };
-
         # Files
         "files.autoSave" = "afterDelay";
-        "files.exclude" = {
-          "**/.git" = true;
-          "**/node_modules" = true;
-          "**/__pycache__" = true;
-          "vendor/" = true;
-          "storage/" = true;
-          "bootstrap/cache" = true;
-        };
+        "files.insertFinalNewline" = true;
+        "files.trimTrailingWhitespace" = true;
 
         # Terminal
         "terminal.integrated.defaultProfile.linux" = "zsh";
+        "workbench.panel.defaultLocation" = "right";
       };
 
       extensions =
