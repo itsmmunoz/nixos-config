@@ -7,6 +7,7 @@
     distrobox
     zoxide
     mcp-nixos
+    gh
     officecli
     codegraph
   ];
