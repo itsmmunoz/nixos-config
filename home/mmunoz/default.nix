@@ -17,6 +17,7 @@
     ./programs/firefox.nix
     ./programs/ghostty.nix
     ./programs/opencode
+    ./programs/antigravity-cli
     ./programs/vscodium.nix
     ./programs/neovim.nix
     ./apps/apps.nix

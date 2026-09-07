@@ -7,7 +7,6 @@
     distrobox
     zoxide
     mcp-nixos
-    antigravity-cli
     officecli
     codegraph
   ];
