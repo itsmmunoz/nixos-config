@@ -1,12 +1,10 @@
 {
   pkgs,
-  pkgs-unstable,
   ...
 }:
 {
   programs.vscodium = {
     enable = true;
-    package = pkgs-unstable.vscodium;
 
     profiles.default = {
       userSettings = {

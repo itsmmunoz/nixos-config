@@ -2,10 +2,9 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     firefox-addons = {
@@ -18,7 +17,6 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       ...
     }@inputs:
@@ -33,12 +31,6 @@
           inherit inputs;
           inherit hostConfig;
           desktop = hostConfig.desktop;
-          # Independent nixpkgs import needs its own allowUnfree
-          # (system-level nixpkgs.config doesn't apply here)
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
         };
         modules = [
           ./hosts/nixos/default.nix

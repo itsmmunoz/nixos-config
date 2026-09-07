@@ -1,20 +1,16 @@
-{ pkgs, pkgs-unstable, ... }: {
-  home.packages =
-    with pkgs;
-    [
-      tree
-      wget
-      television
-      nixfmt
-      distrobox
-      zoxide
-    ]
-    ++ (with pkgs-unstable; [
-      mcp-nixos
-      antigravity-cli
-      officecli
-      codegraph
-    ]);
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    tree
+    wget
+    television
+    nixfmt
+    distrobox
+    zoxide
+    mcp-nixos
+    antigravity-cli
+    officecli
+    codegraph
+  ];
 
   programs.bat = {
     enable = true;

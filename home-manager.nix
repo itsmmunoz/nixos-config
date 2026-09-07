@@ -1,7 +1,6 @@
 {
   inputs,
   hostConfig,
-  pkgs-unstable,
   desktop,
   ...
 }:
@@ -10,7 +9,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit inputs pkgs-unstable desktop;
+      inherit inputs desktop;
       inherit hostConfig;
     };
     backupFileExtension = "hm-backup";
